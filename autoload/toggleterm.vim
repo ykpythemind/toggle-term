@@ -1,3 +1,6 @@
+let s:save_cpo = &cpo
+set cpo&vim
+
 function! toggleterm#hide()
   let bufnum = get(t:, 'terminal_buffer', -1)
   if bufexists(bufnum)
@@ -49,3 +52,5 @@ function! toggleterm#leave()
   call win_gotoid(prev)
 endfunction
 
+let &cpo = s:save_cpo
+unlet s:save_cpo
