@@ -5,7 +5,7 @@ function! toggleterm#hide()
   endif
 endfunction
 
-function! toggleterm#toggle()
+function! toggleterm#toggle() abort
   if bufnr('') == get(t:, 'terminal_buffer', -1)
     call toggleterm#leave()
   else
